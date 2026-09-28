@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "webguard-audit"
+version = "0.1.1"
+description = "Authorized, non-destructive website security posture scanner"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+  "requests>=2.32,<3",
+  "beautifulsoup4>=4.12,<5",
+  "dnspython>=2.6,<3"
+]
+
+[project.scripts]
+webguard = "webguard.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["webguard*"]
